@@ -1,0 +1,29 @@
+{
+  "name": "wincc-unified-nodes",
+  "version": "1.0.0",
+  "description": "Node-Red custom nodes to connect to WINCC UNIFIED PC RT V18^",
+  "main": "wincc-unified-node.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neohb/wincc-unified-nodes.git"
+  },
+  "keywords": [
+    "wincc",
+    "unified",
+    "wincc",
+    "tia",
+    "portal"
+  ],
+  "author": "neohb@hotmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/neohb/wincc-unified-nodes/issues"
+  },
+  "homepage": "https://github.com/neohb/wincc-unified-nodes#readme"
+}
