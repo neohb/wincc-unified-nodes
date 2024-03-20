@@ -28,11 +28,12 @@
     "tia",
     "portal"
   ],
-   "node-red": {
+  "node-red": {
     "nodes": {
       "wincc-unified-nodes": "wincc-unified-nodes.js"
     },
-    "version": "=1.0.0",
+    "version": "=1.0.0"
+  },
   "author": "neohb@hotmail.com",
   "license": "Apache-2.0",
   "bugs": {
@@ -40,3 +41,4 @@
   },
   "homepage": "https://github.com/neohb/wincc-unified-nodes#readme"
 }
+
