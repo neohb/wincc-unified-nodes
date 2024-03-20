@@ -33,11 +33,7 @@
     "graphql"
   ],
   "node-red": {
-     "graphql-server": "wincc-unified-nodes.js",
-      "Unified Login": "wincc-unified-nodes.js",
-      "SUBCRIBE_TagValue": "wincc-unified-nodes.js",
-      "ReadWrite_Tag": "wincc-unified-nodes.js",
-      "SUBCRIBE_AlarmID": "wincc-unified-nodes.js"
+     "*": "wincc-unified-nodes.js"
     },
     "version": ">=1.0.0"
   },
@@ -50,10 +46,6 @@
   "engines": {
     "node": ">=12.21.0"
   },
-  "deprecated": false,
-  "npm": {
-    "omit": [
-      "dev"
-    ]
-  }
+  "deprecated": false
+  
 }
