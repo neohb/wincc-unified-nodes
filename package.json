@@ -13,7 +13,7 @@
     "axios": "^1.2.1",
     "follow-redirects": "^1.15.2",
     "mustache": "^4.2.0",
-    "ws": "8.1.6",
+    "ws": "^8.1.6",
     "node-red": "^3.0.2"
   },
   "repository": {
@@ -26,7 +26,11 @@
     "unified",
     "wincc",
     "tia",
-    "portal"
+    "portal",
+    "wincc unified",
+    "wincc unified pc",
+    "wincc unified pc rt",
+    "graphql"
   ],
   "node-red": {
     "nodes": {
