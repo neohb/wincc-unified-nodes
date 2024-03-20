@@ -1,6 +1,6 @@
 {
   "name": "wincc-unified-nodes",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Node-Red custom nodes to connect to WINCC UNIFIED PC RT V18^",
   "main": "wincc-unified-node.js",
   "directories": {
@@ -13,7 +13,7 @@
     "axios": "^1.2.1",
     "follow-redirects": "^1.15.2",
     "mustache": "^4.2.0",
-    "ws": "^8.1.2",
+    "ws": "^6.1.2",
     "node-red": "^3.0.2"
   },
   "repository": {
@@ -36,13 +36,16 @@
     "nodes": {
       "wincc-unified-nodes": "wincc-unified-nodes.js"
     },
-    "version": "=1.0.0"
+    "version": ">=1.0.0"
   },
   "author": "neohb@hotmail.com",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/neohb/wincc-unified-nodes/issues"
   },
-  "homepage": "https://github.com/neohb/wincc-unified-nodes#readme"
+  "homepage": "https://github.com/neohb/wincc-unified-nodes#readme",
+  "engines": {
+    "node": ">=12.21.0"
+  },
+  "deprecated": false
 }
-
