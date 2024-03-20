@@ -33,8 +33,11 @@
     "graphql"
   ],
   "node-red": {
-    "nodes": {
-      "wincc-unified-nodes": "wincc-unified-nodes.js"
+     "graphql-server": "wincc-unified-nodes.js",
+      "Unified Login": "wincc-unified-nodes.js",
+      "SUBCRIBE_TagValue": "wincc-unified-nodes.js",
+      "ReadWrite_Tag": "wincc-unified-nodes.js",
+      "SUBCRIBE_AlarmID": "wincc-unified-nodes.js"
     },
     "version": ">=1.0.0"
   },
