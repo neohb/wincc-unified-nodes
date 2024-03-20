@@ -670,6 +670,11 @@ function SUBCRIBE_TagValue(config) {
                 if (response && response.tagValues && response.tagValues.value && response.tagValues.value.value !== undefined) {
                     const newData = response.tagValues.value.value;
                     node.send({ payload: newData }); // Emit the data
+		node.status({
+                fill: "green",
+                shape: "dot",
+                text: RED._("subscribe.success")
+              });
                 } else {
                     console.error("Invalid response format or missing data");
                     node.error("Invalid response format or missing data");
@@ -819,7 +824,11 @@ function SUBCRIBE_AlarmID(config) {
 
     // Emit newData to output 1
     node.send({ payload: newData });
-
+	node.status({
+                fill: "green",
+                shape: "dot",
+                text: RED._("subscribe.success")
+              });
     // Check if newData2 is not undefined before sending to output 2
     if (newData2 !== undefined) {
         node.send([null, { payload: newData2 }]);
