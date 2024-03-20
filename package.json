@@ -47,5 +47,10 @@
   "engines": {
     "node": ">=12.21.0"
   },
-  "deprecated": false
+  "deprecated": false,
+  "npm": {
+    "omit": [
+      "dev"
+    ]
+  }
 }
