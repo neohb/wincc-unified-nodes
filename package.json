@@ -1,6 +1,6 @@
 {
   "name": "wincc-unified-nodes",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Node-Red custom nodes to connect to WINCC UNIFIED PC RT V18^",
   "main": "wincc-unified-node.js",
   "directories": {
