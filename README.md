@@ -29,6 +29,11 @@ Attached on the Example folder a flow create to test server connection and play 
 
 The WINCC Unified Nodes software is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.    
 
+## Version
+1.0.13 - Added Youtube link for Installation and usage of wincc-unified-nodes
+
+1.1.0 - (11-JUL-2024) Bug Fixes (error handling for Wrong SSL Cert, Wrong Password/Graphql Address/Unified server down will not crash Node-red now)
+
 ## Acknowledgments
 
 This project includes code from the following sources:
