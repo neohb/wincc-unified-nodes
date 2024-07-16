@@ -34,6 +34,7 @@ The WINCC Unified Nodes software is provided "as is," without warranty of any ki
 
 1.1.0 - (11-JUL-2024) Bug Fixes (error handling for Wrong SSL Cert, Wrong Password/Graphql Address/Unified server down will not crash Node-red now)
 
+1.2.0 - (16-JUL-2024) Added Optional Path IO field for working with custom ca cert path / linux / debian os path etc.
 ## Acknowledgments
 
 This project includes code from the following sources:
