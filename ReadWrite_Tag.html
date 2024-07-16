@@ -9,8 +9,8 @@
         <label for="node-config-input-endpoint"><i class="fa fa-bookmark"></i> <span data-i18n="graphql.label.endpoint"></span></label>
         <input type="text" id="node-config-input-endpoint">
     </div>
-	    <div class="form-row">
-        <label for="node-config-input-ws_endpoint"><i class="fa fa-bookmark"></i> <span data-i18n="graphql.label.ws_endpoint"></i> ws_endpoint</label>
+    <div class="form-row">
+        <label for="node-config-input-ws_endpoint"><i class="fa fa-bookmark"></i> <span data-i18n="graphql.label.ws_endpoint"></span> ws_endpoint</label>
         <input type="text" id="node-config-input-ws_endpoint">
     </div>
     <!-- More configuration fields -->
@@ -19,6 +19,19 @@
         <input type="text" id="node-config-input-caCertPath" readonly>
         <input type="file" id="node-config-input-caCertFile" style="display: none;">
         <button type="button" id="node-config-input-caCertBrowseBtn" style="flex: 3;">Browse</button>
+    </div>
+	<!-- Instructional text -->
+    <div class="form-row">
+        <p>Global Signed CA Certs or Self-Self CA Browse and let us store the certificate name & you manually paste CA certs to your .Nodered folder.</p>
+    </div>
+    <!-- Optional path for other OS -->
+    <div class="form-row">
+        <label for="node-config-input-optionalPath"><i class="fa fa-folder"></i> <span data-i18n="graphql.label.optionalPath">Optional Path for Unix-based Systems</span></label>
+        <input type="text" id="node-config-input-optionalPath" placeholder="/path/to/cert/folder/certname"
+    </div>			
+    <!-- Instructional text -->
+    <div class="form-row">
+        <p>Leave optionalPath empty if you are using Windows .nodered path. For custom path use example C:\Users\Administrator\Desktop\CA.cert.pem or /home/user/certs/CA.cert.pem </p>
     </div>
 </script>
 
@@ -29,9 +42,10 @@
         defaults: {
             name: { value: "", required: false },
             endpoint: { value: "", required: true },
-			ws_endpoint: { value: "", required: true },
+            ws_endpoint: { value: "", required: true },
             token: { value: "", required: false },
-            caCertPath: { value: "add CA if Self Signed", required: false } // Add caCertPath property
+            caCertPath: { value: "", required: false }, // Add caCertPath property
+            optionalPath: { value: "", required: false } // Add optionalPath property for Unix-based systems
         },
         credentials: {
             token: { type: "password" },
@@ -50,12 +64,12 @@
             $('#node-config-input-caCertFile').change(function () {
                 var filePath = $(this).val();
                 $('#node-config-input-caCertPath').val(filePath);
-                // Also update the config node's caCertPath property
-                RED.view.state(RED.state.EXPORT);
             });
         }
     });
 </script>
+
+
 
 <script type="text/x-red" data-help-name="ReadWrite_Tag">
     <p>This node executes a GraphQL Query or Mutation 
