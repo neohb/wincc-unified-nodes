@@ -219,6 +219,7 @@ var vers = "2.1.2";
     node.endpoint = config.endpoint;
 	node.ws_endpoint = config.ws_endpoint;
 	node.caCertPath = config.caCertPath;
+	node.optionalPath = config.optionalPath;
     node.token = config.token
     RED.log.debug("node.endpoint: " + node.endpoint);
 	RED.log.debug("node.ws_endpoint: " + node.ws_endpoint); // Log ws_endpoint
@@ -276,7 +277,11 @@ function callGraphQLServer(query, variables = {}, customHeaders = {}) {
     let cert = node.caCertPath || node.graphqlConfig.caCertPath || "";
     const token = node.token || node.graphqlConfig.token || "";
     var transformedFilePath = cert.replace('C:\\fakepath\\', '.node-red\\');
-
+	let Optpath = node.optionalPath || node.graphqlConfig.optionalPath || "";
+		// Check if an optional path is provided for Unix-based systems
+		if (Optpath) {
+			transformedFilePath = Optpath;
+		}
     if (token) {
         headers["Authorization"] = `Bearer ${token}`;
     }
@@ -467,7 +472,15 @@ function callGraphQLServer(query, variables = {}, customHeaders = {}) {
   let url = mustache.render(node.graphqlConfig.endpoint, data);
   let headers = customHeaders;
   let cert = node.caCertPath || node.graphqlConfig.caCertPath || "";
-  var transformedFilePath = cert.replace('C:\\fakepath\\', '.node-red\\');
+  
+  // Default transformed file path for Windows
+  let transformedFilePath = cert.replace('C:\\fakepath\\', '.node-red\\');
+  let Optpath = node.optionalPath || node.graphqlConfig.optionalPath || "";
+  // Check if an optional path is provided for Unix-based systems
+  if (Optpath) {
+    transformedFilePath = Optpath;
+  }
+
 
   if (node.showDebug) {
     node.log(safeJSONStringify(data));
@@ -655,7 +668,11 @@ function SUBCRIBE_TagValue(config) {
             return;
         }
         var transformedFilePath_ws = cert_ws.replace('C:\\fakepath\\', '.node-red\\');
-
+		let Optpath = node.optionalPath || node.graphqlConfig.optionalPath || "";
+		// Check if an optional path is provided for Unix-based systems
+		if (Optpath) {
+			transformedFilePath_ws = Optpath;
+		}
         wsConnection = graphQLSubscriber(url, options, (error, subscribe) => {
             if (error) {
                 console.error("WebSocket connection error:", error);
@@ -806,7 +823,11 @@ function SUBCRIBE_AlarmID(config) {
             return;
         }
         var transformedFilePath_ws = cert_ws.replace('C:\\fakepath\\', '.node-red\\');
-
+		let Optpath = node.optionalPath || node.graphqlConfig.optionalPath || "";
+		// Check if an optional path is provided for Unix-based systems
+		if (Optpath) {
+			transformedFilePath_ws = Optpath;
+				}
         wsConnection = graphQLSubscriber(url, options, (error, subscribe) => {
             if (error) {
                 console.error("WebSocket connection error:", error);
